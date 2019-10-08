@@ -1,0 +1,251 @@
+--------------------------------------------------------------------------------
+Processing file 'model.py'
+ outputting to 'model_v2.py'
+--------------------------------------------------------------------------------
+
+'model.py' Line 10
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+Added keyword 'axis' to reordered function 'tf.reduce_mean'
+
+    Old:         mean = tf.reduce_mean(X, [0,1,2])
+                                                   
+    New:         mean = tf.reduce_mean(input_tensor=X, axis=[0,1,2])
+                                       ~~~~~~~~~~~~~   ~~~~~         
+
+'model.py' Line 11
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+Added keyword 'axis' to reordered function 'tf.reduce_mean'
+
+    Old:         std = tf.reduce_mean( tf.square(X-mean), [0,1,2] )
+                                                                    
+    New:         std = tf.reduce_mean( input_tensor=tf.square(X-mean), axis=[0,1,2] )
+                                       ~~~~~~~~~~~~~                   ~~~~~          
+
+'model.py' Line 20
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+Added keyword 'axis' to reordered function 'tf.reduce_mean'
+
+    Old:         mean = tf.reduce_mean(X, 0)
+                                             
+    New:         mean = tf.reduce_mean(input_tensor=X, axis=0)
+                                       ~~~~~~~~~~~~~   ~~~~~   
+
+'model.py' Line 21
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+Added keyword 'axis' to reordered function 'tf.reduce_mean'
+
+    Old:         std = tf.reduce_mean(tf.square(X-mean), 0)
+                                                            
+    New:         std = tf.reduce_mean(input_tensor=tf.square(X-mean), axis=0)
+                                      ~~~~~~~~~~~~~                   ~~~~~   
+
+'model.py' Line 41
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+
+    Old:     return tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(o, t))
+                                                                                  
+    New:     return tf.reduce_mean(input_tensor=tf.nn.sigmoid_cross_entropy_with_logits(o, t))
+                                   ~~~~~~~~~~~~~                                               
+
+'model.py' Line 68
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.gen_W1 = tf.Variable(tf.random_normal([dim_z+dim_y, dim_W1], stddev=0.02), name='gen_W1')
+                                           ~~~~~~~~~~~~~~~~                                                     
+    New:         self.gen_W1 = tf.Variable(tf.random.normal([dim_z+dim_y, dim_W1], stddev=0.02), name='gen_W1')
+                                           ~~~~~~~~~~~~~~~~                                                     
+
+'model.py' Line 69
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.gen_W2 = tf.Variable(tf.random_normal([dim_W1+dim_y, dim_W2*6*6], stddev=0.02), name='gen_W2')
+                                           ~~~~~~~~~~~~~~~~                                                          
+    New:         self.gen_W2 = tf.Variable(tf.random.normal([dim_W1+dim_y, dim_W2*6*6], stddev=0.02), name='gen_W2')
+                                           ~~~~~~~~~~~~~~~~                                                          
+
+'model.py' Line 70
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.gen_W3 = tf.Variable(tf.random_normal([5,5,dim_W3,dim_W2+dim_y], stddev=0.02), name='gen_W3')
+                                           ~~~~~~~~~~~~~~~~                                                         
+    New:         self.gen_W3 = tf.Variable(tf.random.normal([5,5,dim_W3,dim_W2+dim_y], stddev=0.02), name='gen_W3')
+                                           ~~~~~~~~~~~~~~~~                                                         
+
+'model.py' Line 71
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.gen_W4 = tf.Variable(tf.random_normal([5,5,dim_channel,dim_W3+dim_y], stddev=0.02), name='gen_W4')
+                                           ~~~~~~~~~~~~~~~~                                                              
+    New:         self.gen_W4 = tf.Variable(tf.random.normal([5,5,dim_channel,dim_W3+dim_y], stddev=0.02), name='gen_W4')
+                                           ~~~~~~~~~~~~~~~~                                                              
+
+'model.py' Line 73
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.discrim_W1 = tf.Variable(tf.random_normal([5,5,dim_channel+dim_y,dim_W3], stddev=0.02), name='discrim_W1')
+                                               ~~~~~~~~~~~~~~~~                                                                  
+    New:         self.discrim_W1 = tf.Variable(tf.random.normal([5,5,dim_channel+dim_y,dim_W3], stddev=0.02), name='discrim_W1')
+                                               ~~~~~~~~~~~~~~~~                                                                  
+
+'model.py' Line 74
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.discrim_W2 = tf.Variable(tf.random_normal([5,5,dim_W3+dim_y,dim_W2], stddev=0.02), name='discrim_W2')
+                                               ~~~~~~~~~~~~~~~~                                                             
+    New:         self.discrim_W2 = tf.Variable(tf.random.normal([5,5,dim_W3+dim_y,dim_W2], stddev=0.02), name='discrim_W2')
+                                               ~~~~~~~~~~~~~~~~                                                             
+
+'model.py' Line 75
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.discrim_W3 = tf.Variable(tf.random_normal([dim_W2*6*6+dim_y,dim_W1], stddev=0.02), name='discrim_W3')
+                                               ~~~~~~~~~~~~~~~~                                                             
+    New:         self.discrim_W3 = tf.Variable(tf.random.normal([dim_W2*6*6+dim_y,dim_W1], stddev=0.02), name='discrim_W3')
+                                               ~~~~~~~~~~~~~~~~                                                             
+
+'model.py' Line 76
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.random_normal' to 'tf.random.normal'
+
+    Old:         self.discrim_W4 = tf.Variable(tf.random_normal([dim_W1+dim_y,1], stddev=0.02), name='discrim_W4')
+                                               ~~~~~~~~~~~~~~~~                                                    
+    New:         self.discrim_W4 = tf.Variable(tf.random.normal([dim_W1+dim_y,1], stddev=0.02), name='discrim_W4')
+                                               ~~~~~~~~~~~~~~~~                                                    
+
+'model.py' Line 80
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.placeholder' to 'tf.compat.v1.placeholder'
+
+    Old:         Z = tf.placeholder(tf.float32, [self.batch_size, self.dim_z])
+                     ~~~~~~~~~~~~~~                                            
+    New:         Z = tf.compat.v1.placeholder(tf.float32, [self.batch_size, self.dim_z])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~                                            
+
+'model.py' Line 81
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.placeholder' to 'tf.compat.v1.placeholder'
+
+    Old:         Y = tf.placeholder(tf.float32, [self.batch_size, self.dim_y])
+                     ~~~~~~~~~~~~~~                                            
+    New:         Y = tf.compat.v1.placeholder(tf.float32, [self.batch_size, self.dim_y])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~                                            
+
+'model.py' Line 83
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.placeholder' to 'tf.compat.v1.placeholder'
+
+    Old:         image_real = tf.placeholder(tf.float32, [self.batch_size]+self.image_shape)
+                              ~~~~~~~~~~~~~~                                                 
+    New:         image_real = tf.compat.v1.placeholder(tf.float32, [self.batch_size]+self.image_shape)
+                              ~~~~~~~~~~~~~~~~~~~~~~~~                                                 
+
+'model.py' Line 90
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+
+    Old:         p_real=tf.reduce_mean(raw_real2)
+                                                  
+    New:         p_real=tf.reduce_mean(input_tensor=raw_real2)
+                                       ~~~~~~~~~~~~~           
+
+'model.py' Line 94
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+
+    Old:         p_gen = tf.reduce_mean(raw_gen2)
+                                                  
+    New:         p_gen = tf.reduce_mean(input_tensor=raw_gen2)
+                                        ~~~~~~~~~~~~~          
+
+'model.py' Line 96
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_sum'
+Added keyword 'input_tensor' to reordered function 'tf.reduce_sum'
+
+    Old:         discrim_cost = tf.reduce_sum(raw_real2) - tf.reduce_sum(raw_gen2)
+                                                                                   
+    New:         discrim_cost = tf.reduce_sum(input_tensor=raw_real2) - tf.reduce_sum(input_tensor=raw_gen2)
+                                              ~~~~~~~~~~~~~                           ~~~~~~~~~~~~~          
+
+'model.py' Line 97
+--------------------------------------------------------------------------------
+
+Added keyword 'input_tensor' to reordered function 'tf.reduce_mean'
+
+    Old:         gen_cost = -tf.reduce_mean(raw_gen2)
+                                                      
+    New:         gen_cost = -tf.reduce_mean(input_tensor=raw_gen2)
+                                            ~~~~~~~~~~~~~          
+
+'model.py' Line 110
+--------------------------------------------------------------------------------
+
+WARNING: use_cudnn_on_gpu argument has been removed and "filter" was renamed to "filters"
+
+    Old:         h1 = lrelu( tf.nn.conv2d( X, self.discrim_W1, strides=[1,2,2,1], padding='SAME' ))
+                             ~~~~~~~~~~~~                                                           
+    New:         h1 = lrelu( tf.nn.conv2d( X, self.discrim_W1, strides=[1,2,2,1], padding='SAME' ))
+                             ~~~~~~~~~~~~                                                           
+
+'model.py' Line 114
+--------------------------------------------------------------------------------
+
+WARNING: use_cudnn_on_gpu argument has been removed and "filter" was renamed to "filters"
+
+    Old:         h2 = lrelu(batchnormalize( tf.nn.conv2d( h1, self.discrim_W2, strides=[1,2,2,1], padding='SAME')) )
+                                            ~~~~~~~~~~~~                                                             
+    New:         h2 = lrelu(batchnormalize( tf.nn.conv2d( h1, self.discrim_W2, strides=[1,2,2,1], padding='SAME')) )
+                                            ~~~~~~~~~~~~                                                             
+
+'model.py' Line 157
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.placeholder' to 'tf.compat.v1.placeholder'
+
+    Old:         Z = tf.placeholder(tf.float32, [batch_size, self.dim_z])
+                     ~~~~~~~~~~~~~~                                       
+    New:         Z = tf.compat.v1.placeholder(tf.float32, [batch_size, self.dim_z])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~                                       
+
+'model.py' Line 158
+--------------------------------------------------------------------------------
+
+Renamed function 'tf.placeholder' to 'tf.compat.v1.placeholder'
+
+    Old:         Y = tf.placeholder(tf.float32, [batch_size, self.dim_y])
+                     ~~~~~~~~~~~~~~                                       
+    New:         Y = tf.compat.v1.placeholder(tf.float32, [batch_size, self.dim_y])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~                                       
+
+
