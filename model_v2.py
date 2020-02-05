@@ -50,9 +50,9 @@ class GAN():
             image_shape=[24,24,1],
             dim_z=100,
             dim_y=6, #The parameters for controlling the number of events
-            dim_W1=1024,
-            dim_W2=128,
-            dim_W3=64,
+            dim_W1=2048,
+            dim_W2=1024,
+            dim_W3=128,
             dim_channel=1,
             ):
 
